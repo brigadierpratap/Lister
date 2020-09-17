@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { Button, Form, Input, Label } from "reactstrap";
 import { createList } from "../../store/actions/listActions";
 
@@ -19,6 +20,8 @@ class CreateList extends Component {
     this.props.createList(this.state);
   };
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="signin" />;
     return (
       <div className="container">
         <Form onSubmit={this.handleSubmit} className="white">
@@ -50,4 +53,10 @@ const mapDispatchToProps = (dispatch) => {
     createList: (list) => dispatch(createList(list)),
   };
 };
-export default connect(null, mapDispatchToProps)(CreateList);
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateList);
