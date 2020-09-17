@@ -8,9 +8,9 @@ const ListDisplay = ({ lists }) => {
       {lists &&
         lists.map((list) => {
           return (
-            <Link to={"/list/" + list.id}>
+            <Link to={"/list/" + list.id} key={list.id}>
               {" "}
-              <ListSummary list={list} key={list.id} />
+              <ListSummary list={list} />
             </Link>
           );
         })}
