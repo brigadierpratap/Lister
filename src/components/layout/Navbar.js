@@ -1,28 +1,60 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
 import { isLoaded } from "react-redux-firebase";
+import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
 
-const Navbar = ({ auth }) => {
-  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
-  return (
-    <nav className="nav-wrapper grey darken-3">
-      <div className="container">
-        <Link to="/" className="brand-logo left">
-          Lister
-        </Link>
-        {isLoaded(auth) && links}
-      </div>
-    </nav>
-  );
-};
+class Navbarn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+  toggleNav() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar dark expand="md">
+          <div className="container">
+            <NavbarToggler onClick={this.toggleNav} />
+            <NavbarBrand href="/" className="mx-auto">
+              {" "}
+              <img src="sa" href="/" alt="Lister"></img>
+            </NavbarBrand>
+            <Collapse
+              navbar
+              isOpen={this.state.isOpen}
+              className="col col-md-6 float-right"
+            >
+              <Nav navbar>
+                {isLoaded(this.props.auth) && this.props.auth.uid ? (
+                  <SignedInLinks profile={this.props.profile} />
+                ) : (
+                  <SignedOutLinks />
+                )}
+              </Nav>
+            </Collapse>
+          </div>
+        </Navbar>
+      </React.Fragment>
+    );
+  }
+}
+
 const mapStateToProps = (state) => {
-  //console.log(state);
+  console.log(state);
   return {
     auth: state.firebase.auth,
+    profile: state.firebase.profile,
   };
 };
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbarn);

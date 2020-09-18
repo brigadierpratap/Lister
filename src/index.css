@@ -28,3 +28,6 @@ input[type="textarea"].materialize-textarea:not(.browser-default):focus:not([rea
   border-color: lightcoral;
   box-shadow: none;
 }
+.navbar-dark {
+  background-color: #575356;
+}

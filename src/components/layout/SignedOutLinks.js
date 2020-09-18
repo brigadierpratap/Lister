@@ -1,16 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { NavItem } from "reactstrap";
 
 const SignedOutLinks = () => {
   return (
-    <ul className="right">
-      <li>
-        <NavLink to="/signup">Signup</NavLink>
-      </li>
-      <li>
-        <NavLink to="/signin">Login</NavLink>
-      </li>
-    </ul>
+    <React.Fragment>
+      <NavItem>
+        <NavLink className="nav-link" to="/signup">
+          <i class="fa fa-sign-in fa-lg"></i> Signup
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink className="nav-link" to="/signin">
+          <i class="fa fa-sign-in fa-lg"></i> Login
+        </NavLink>
+      </NavItem>
+    </React.Fragment>
   );
 };
 export default SignedOutLinks;

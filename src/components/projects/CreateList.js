@@ -18,6 +18,7 @@ class CreateList extends Component {
     e.preventDefault();
     //console.log(this.state);
     this.props.createList(this.state);
+    this.props.history.push("/");
   };
   render() {
     const { auth } = this.props;

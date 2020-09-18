@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Notifications from "./Notifications";
 import ListDisplay from "../projects/ListDisplay";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -21,11 +20,8 @@ class Dashboard extends Component {
     return (
       <div className="dashboard container">
         <div className="row">
-          <div className="col s12 m6">
+          <div className="col col-sm-12 col-md-12">
             <ListDisplay lists={lists} />{" "}
-          </div>
-          <div className="col s12 m5 offset-m1">
-            <Notifications />
           </div>
         </div>
       </div>
@@ -35,5 +31,5 @@ class Dashboard extends Component {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "lists" }])
+  firestoreConnect([{ collection: "lists", orderBy: ["createdAt", "desc"] }])
 )(Dashboard);
