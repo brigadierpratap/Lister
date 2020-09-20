@@ -8,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(/image/back.webp);
+  background: url(https://images.unsplash.com/photo-1519419166318-4f5c601b8e6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,10 +24,41 @@ code {
 input[type="text"]:not(.browser-default):focus:not([readonly]),
 input[type="email"]:not(.browser-default):focus:not([readonly]),
 input[type="password"]:not(.browser-default):focus:not([readonly]),
-input[type="textarea"].materialize-textarea:not(.browser-default):focus:not([readonly]) {
+input[type="textarea"]:not(.browser-default):focus:not([readonly]) {
   border-color: lightcoral;
   box-shadow: none;
 }
 .navbar-dark {
   background-color: #575356;
+}
+.profDisp {
+  margin-top: 3rem;
+  margin-left: auto;
+}
+.profileDisplay {
+  /*background-image: url(/image/profback.jpeg);*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-enter {
+  opacity: 0.01;
+  transform: translate(-100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translate(0%);
+  transition: all 300ms ease-in;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translate(0%);
+}
+
+.page-exit-active {
+  opacity: 0.01;
+  transform: translate(100%);
+  transition: all 300ms ease-out;
 }

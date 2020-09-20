@@ -5,15 +5,19 @@ import ListSummary from "./ListSummary";
 
 const ListDisplay = ({ lists, auth }) => {
   return (
-    <div className="project-list section">
+    <div className="col">
       {lists &&
         lists
           .filter((list) => list.authorId === auth.uid)
           .map((list) => {
             return (
-              <Link to={"/list/" + list.id} key={list.id}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/list/" + list.id}
+                key={list.id}
+              >
                 {" "}
-                <div className="col col-sm-12 col-md-3">
+                <div className="col-md-8 offset-md-2 mt-2">
                   <ListSummary list={list} />
                 </div>
               </Link>

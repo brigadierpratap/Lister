@@ -7,12 +7,12 @@ const SignedOutLinks = () => {
     <React.Fragment>
       <NavItem>
         <NavLink className="nav-link" to="/signup">
-          <i class="fa fa-sign-in fa-lg"></i> Signup
+          <i className="fa fa-sign-in fa-lg"></i> Signup
         </NavLink>
       </NavItem>
       <NavItem>
         <NavLink className="nav-link" to="/signin">
-          <i class="fa fa-sign-in fa-lg"></i> Login
+          <i className="fa fa-sign-in fa-lg"></i> Login
         </NavLink>
       </NavItem>
     </React.Fragment>

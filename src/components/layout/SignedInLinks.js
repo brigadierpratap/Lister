@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Nav, NavItem } from "reactstrap";
+import { NavItem } from "reactstrap";
 import { signOut } from "../../store/actions/authActions";
 
 const SignedInLinks = (props) => {
@@ -20,14 +20,17 @@ const SignedInLinks = (props) => {
       <NavItem>
         <NavLink className="nav-link" to="/" onClick={props.signOut}>
           <span
-            class="fa fa-sign-out fa-lg
+            className="fa fa-sign-out fa-lg
           "
           ></span>{" "}
           Log Out
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink className="nav-link" to="/" className="btn btn-primary">
+        <NavLink
+          className="nav-link btn-info text-light text-center  color-white rounded "
+          to="/profile"
+        >
           {props.profile.initials}
         </NavLink>
       </NavItem>

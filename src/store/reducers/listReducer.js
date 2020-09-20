@@ -17,6 +17,27 @@ export const listReducer = (state = initState, action) => {
     case "CREATE_LIST_ERROR":
       console.log(action.err);
       return state;
+    case "DEL_LIST":
+      console.log("Successfully Deleted!");
+      alert("Successfully Deleted!");
+      return state;
+    case "DEL_LIST_ERROR":
+      console.log("Error deleting list :", action.err);
+      return state;
+    case "DONE_LIST":
+      console.log("Marked done");
+      return state;
+    case "DONE_LIST_ERROR":
+      console.log("MarkING FAILED", action.err);
+      alert("FAILED");
+      return state;
+    case "UNDONE_LIST":
+      console.log("Marked Undone");
+      return state;
+    case "UNDONE_LIST_ERROR":
+      console.log("MarkING FAILED", action.err);
+      alert("FAILED");
+      return state;
     default:
       return state;
   }

@@ -22,6 +22,7 @@ import firebase from "firebase/app";
 import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import { Loading } from "./components/dashboard/LoadingComponent";
 
 const store = createStore(
   rootReducer,
@@ -51,9 +52,9 @@ function AuthIsLoaded({ children }) {
   const auth = useSelector((state) => state.firebase.auth);
   if (!isLoaded(auth))
     return (
-      <div className="center">
+      <div className="text-center">
         {" "}
-        <p>Loading List...</p>
+        <Loading />
       </div>
     );
   return children;

@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard container">
         <div className="row">
-          <div className="col col-sm-12 col-md-12">
+          <div className="col">
             <ListDisplay lists={lists} />{" "}
           </div>
         </div>

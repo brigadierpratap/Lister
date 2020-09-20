@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
@@ -25,16 +24,22 @@ class Navbarn extends Component {
         <Navbar dark expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
-            <NavbarBrand href="/" className="mx-auto">
+            <NavbarBrand href="/" className="mr-auto">
               {" "}
-              <img src="sa" href="/" alt="Lister"></img>
+              <img
+                src="/image/logo.png"
+                href="/"
+                alt="Lister"
+                style={{
+                  height: "50px",
+                  width: "90px",
+                  transform: "1.2",
+                  maxBlockSize: "40px",
+                }}
+              ></img>
             </NavbarBrand>
-            <Collapse
-              navbar
-              isOpen={this.state.isOpen}
-              className="col col-md-6 float-right"
-            >
-              <Nav navbar>
+            <Collapse navbar isOpen={this.state.isOpen} className=" ">
+              <Nav navbar className="ml-auto">
                 {isLoaded(this.props.auth) && this.props.auth.uid ? (
                   <SignedInLinks profile={this.props.profile} />
                 ) : (

@@ -21,3 +21,60 @@ export const createList = (list) => {
       });
   };
 };
+export const delList = (listId) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("lists")
+      .doc(listId)
+      .delete()
+      .then(() => {
+        dispatch({ type: "DEL_LIST" });
+      })
+      .catch((err) => {
+        dispatch({ type: "DEL_LIST_ERROR", err });
+      });
+  };
+};
+
+export const markUnDone = (listId) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("lists")
+      .doc(listId)
+      .set(
+        {
+          isDone: false,
+        },
+        { merge: true }
+      )
+      .then(() => {
+        dispatch({ type: "UNDONE_LIST" });
+      })
+      .catch((err) => {
+        dispatch({ type: "UNDONE_LIST_ERROR", err });
+      });
+  };
+};
+
+export const markDone = (listId) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("lists")
+      .doc(listId)
+      .set(
+        {
+          isDone: true,
+        },
+        { merge: true }
+      )
+      .then(() => {
+        dispatch({ type: "DONE_LIST" });
+      })
+      .catch((err) => {
+        dispatch({ type: "DONE_LIST_ERROR", err });
+      });
+  };
+};

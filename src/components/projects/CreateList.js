@@ -8,6 +8,7 @@ class CreateList extends Component {
   state = {
     title: "",
     message: "",
+    isDone: false,
   };
   handleChange = (e) => {
     this.setState({
@@ -24,24 +25,24 @@ class CreateList extends Component {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="signin" />;
     return (
-      <div className="container">
-        <Form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">New List</h5>
-          <div className="input-field">
+      <div className="container shadow-lg mb-5 rounded">
+        <Form onSubmit={this.handleSubmit} className="white mt-3">
+          <h4 className="text-dark text-center">New List</h4>
+          <div className="input-field col-md-6 offset-md-3">
             <Label htmlFor="title">Title</Label>
             <Input type="text" id="title" onChange={this.handleChange} />
           </div>
-          <div className="input-field">
+          <div className="input-field col-md-6 offset-md-3">
             <Label htmlFor="message">Message</Label>
             <Input
               type="textarea"
               id="message"
-              className="materialize-textarea"
+              className="textarea"
               onChange={this.handleChange}
             />
           </div>
           <div className="input-field">
-            <Button className="btn pink lighten-1 z-depth-0">Create</Button>
+            <Button className="btn offset-5 mt-2">Create List</Button>
           </div>
         </Form>
       </div>

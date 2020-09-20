@@ -1,21 +1,39 @@
 import React from "react";
 import moment from "moment";
+import { Card, CardBody, CardFooter, CardText, CardTitle } from "reactstrap";
 
 const ListSummary = ({ list }) => {
-  return (
-    <div className="card z-depth-0 project-summary" id="contextMenuId">
-      <div className="card-content grey-text text-darken-3">
-        <span className="card-title">{list.title}</span>
-        <p>
-          By {list.authorFirstName} {list.authorLastName}
-        </p>
-        <p className="grey-text">
-          {" "}
-          {moment(list.createdAt.toDate()).calendar()}
-        </p>
-      </div>
-    </div>
-  );
+  if (list.isDone)
+    return (
+      <Card className="card bg-success project-summary " id="contextMenuId">
+        <CardBody className="card-body text-light">
+          <CardTitle className="card-title">{list.title}</CardTitle>
+          <CardText>
+            By {list.authorFirstName} {list.authorLastName}
+          </CardText>
+          <CardFooter className="text-secondary">
+            {"--"}
+            {moment(list.createdAt.toDate()).calendar()}
+          </CardFooter>
+        </CardBody>
+      </Card>
+    );
+  else {
+    return (
+      <Card className="card bg-info project-summary" id="contextMenuId">
+        <CardBody className="card-body text-light">
+          <CardTitle className="card-title">{list.title}</CardTitle>
+          <CardText>
+            By {list.authorFirstName} {list.authorLastName}
+          </CardText>
+          <CardFooter className="text-secondary">
+            {"--"}
+            {moment(list.createdAt.toDate()).calendar()}
+          </CardFooter>
+        </CardBody>
+      </Card>
+    );
+  }
 };
 
 export default ListSummary;

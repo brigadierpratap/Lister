@@ -27,13 +27,15 @@ class SignUp extends Component {
     else
       return (
         <div className="container">
-          <Form onSubmit={this.handleSubmit} className="white">
-            <h5 className="grey-text text-darken-3">Sign Up</h5>
-            <div className="input-field">
+          <Form onSubmit={this.handleSubmit} className="bg-white">
+            <h4 className="text-center">
+              <u>Sign Up</u>
+            </h4>
+            <div className="input-field col-md-6 offset-md-3">
               <Label htmlFor="email">Email</Label>
               <Input type="email" id="email" onChange={this.handleChange} />
             </div>
-            <div className="input-field">
+            <div className="input-field col-sm-12 col-sm-12 col-md-6 offset-md-3">
               <Label htmlFor="password">Password</Label>
               <Input
                 type="password"
@@ -41,16 +43,16 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className="input-field">
+            <div className="input-field col-md-6 offset-md-3">
               <Label htmlFor="firstName">John</Label>
               <Input type="text" id="firstName" onChange={this.handleChange} />
             </div>
-            <div className="input-field">
+            <div className="input-field col-md-6 offset-md-3">
               <Label htmlFor="lastName">Doe</Label>
               <Input type="text" id="lastName" onChange={this.handleChange} />
             </div>
             <div className="input-field">
-              <Button className="btn pink lighten-1 z-depth-0">SignUp</Button>
+              <Button className="button offset-5 mt-1">SignUp</Button>
             </div>
             <div className="red-text center">
               {authErr ? <p>{authErr}</p> : null}
