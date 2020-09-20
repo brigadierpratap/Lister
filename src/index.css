@@ -53,3 +53,13 @@ input[type="textarea"]:not(.browser-default):focus:not([readonly]) {
   transform: translate(100%);
   transition: all 300ms ease-out;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #575356;
+  text-emphasis: none;
+  text-decoration: none;
+}

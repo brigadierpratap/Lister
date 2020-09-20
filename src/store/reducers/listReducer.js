@@ -12,7 +12,7 @@ const initState = {
 export const listReducer = (state = initState, action) => {
   switch (action.type) {
     case "CREATE_LIST":
-      console.log("created list ", action.list);
+      console.log("created list !");
       return state;
     case "CREATE_LIST_ERROR":
       console.log(action.err);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, Input, Label } from "reactstrap";
+import { Button, Input } from "reactstrap";
 import { resetPassword, uploadDp } from "../../store/actions/authActions";
 
 class ProfileDisp extends Component {
@@ -25,9 +25,12 @@ class ProfileDisp extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div
+        className="container"
+        style={{ overflow: "hidden", wordWrap: "break-word" }}
+      >
         <div
-          className="row p-2 mt-5 border"
+          className="row p-2 mt-4 border"
           style={{ boxShadow: "-moz-initial", backgroundBlendMode: "hue" }}
         >
           <div className="col-sm-12 col-md-6 text-center " id="profileD">

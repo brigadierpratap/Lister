@@ -18,6 +18,15 @@ const SignedInLinks = (props) => {
         </NavLink>
       </NavItem>
       <NavItem>
+        <NavLink className="nav-link" to="/aboutus">
+          <span
+            className="fa fa-info-circle fa-lg
+          "
+          ></span>{" "}
+          About us
+        </NavLink>
+      </NavItem>
+      <NavItem>
         <NavLink className="nav-link" to="/" onClick={props.signOut}>
           <span
             className="fa fa-sign-out fa-lg
