@@ -31,16 +31,7 @@ input[type="textarea"]:not(.browser-default):focus:not([readonly]) {
 .navbar-dark {
   background-color: #575356;
 }
-.profDisp {
-  margin-top: 3rem;
-  margin-left: auto;
-}
-.profileDisplay {
-  /*background-image: url(/image/profback.jpeg);*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 .page-enter {
   opacity: 0.01;
   transform: translate(-100%);

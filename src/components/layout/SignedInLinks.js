@@ -14,7 +14,7 @@ const SignedInLinks = (props) => {
       </NavItem>
       <NavItem>
         <NavLink className="nav-link" to="/create">
-          <span className="fa fa-plus-square fa-lg"></span> New List
+          <span className="fa fa-plus-square fa-lg"></span> Add Task
         </NavLink>
       </NavItem>
       <NavItem>

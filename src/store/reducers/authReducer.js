@@ -24,6 +24,24 @@ export const authReducer = (state = initState, action) => {
         ...state,
         authErr: action.err.message,
       };
+    case "PASS_RESET":
+      alert("Email sent!");
+      return state;
+    case "PASS_RESET_ERROR":
+      console.log("Reset Error");
+      alert(action.err.message);
+      return {
+        ...state,
+        authErr: action.err.message,
+      };
+    case "URL":
+      console.log("File Uploaded");
+      alert("File uploaded");
+      return { ...state, authErr: null };
+    case "URL_ERROR":
+      console.log("File Uploaded");
+      //alert("Upload failed");
+      return { ...state, authErr: null };
     default:
       return state;
   }

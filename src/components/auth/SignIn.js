@@ -55,7 +55,7 @@ class SignIn extends Component {
               <Button className="btn btn-rounded lighten-1  z-depth-0">
                 Login
               </Button>
-              <div className="red-text center">
+              <div className="text-danger center">
                 {authError ? authError : ""}
               </div>
             </div>

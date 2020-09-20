@@ -42,7 +42,7 @@ class CreateList extends Component {
             />
           </div>
           <div className="input-field">
-            <Button className="btn offset-5 mt-2">Create List</Button>
+            <Button className="btn offset-5 mt-2">Add Task</Button>
           </div>
         </Form>
       </div>

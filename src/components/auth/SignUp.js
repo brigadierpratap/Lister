@@ -44,17 +44,27 @@ class SignUp extends Component {
               />
             </div>
             <div className="input-field col-md-6 offset-md-3">
-              <Label htmlFor="firstName">John</Label>
-              <Input type="text" id="firstName" onChange={this.handleChange} />
+              <Label htmlFor="firstName">First Name</Label>
+              <Input
+                type="text"
+                id="firstName"
+                onChange={this.handleChange}
+                placeholder="John"
+              />
             </div>
             <div className="input-field col-md-6 offset-md-3">
-              <Label htmlFor="lastName">Doe</Label>
-              <Input type="text" id="lastName" onChange={this.handleChange} />
+              <Label htmlFor="lastName">Last Name</Label>
+              <Input
+                type="text"
+                id="lastName"
+                onChange={this.handleChange}
+                placeholder="Doe"
+              />
             </div>
             <div className="input-field">
               <Button className="button offset-5 mt-1">SignUp</Button>
             </div>
-            <div className="red-text center">
+            <div className="text-danger center">
               {authErr ? <p>{authErr}</p> : null}
             </div>
           </Form>
