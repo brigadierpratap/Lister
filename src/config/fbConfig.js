@@ -3,14 +3,14 @@ import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
 var firebaseConfig = {
-  apiKey: "AIzaSyDxZWADwqMmXAX0FXO55LlM4hF92BnKoUs",
-  authDomain: "lister-49423.firebaseapp.com",
-  databaseURL: "https://lister-49423.appspot.com",
-  projectId: "lister-49423",
-  storageBucket: "gs://lister-49423.appspot.com",
-  messagingSenderId: "1069645442610",
-  appId: "1:1069645442610:web:1a343a68a3376c92d4d62b",
-  measurementId: "G-91MTGPLST6",
+  apiKey: "AIzaSyAl-slJtHvgKzZdrR-rdpQ1eudw7396HaM",
+  authDomain: "lister-2-88bad.firebaseapp.com",
+  databaseURL: "https://lister-2-88bad.firebaseio.com",
+  projectId: "lister-2-88bad",
+  storageBucket: "gs://lister-2-88bad.appspot.com",
+  messagingSenderId: "694695829587",
+  appId: "1:694695829587:web:75b581be8a7dfab433e6a6",
+  measurementId: "G-ND49NJ1DLL",
 };
 
 firebase.initializeApp(firebaseConfig);
